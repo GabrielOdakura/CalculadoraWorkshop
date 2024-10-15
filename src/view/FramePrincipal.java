@@ -1,5 +1,7 @@
 package view;
 
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -23,6 +25,14 @@ public class FramePrincipal extends JFrame {
     private JButton botao8;
     private JButton botao9;
     public FramePrincipal(){
+
+        try {
+            UIManager.setLookAndFeel(new FlatMacLightLaf());
+            UIManager.put("Panel.background", new Color(208, 231, 249));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         this.setTitle("Calculadora");
         this.setSize(new Dimension(400,600));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
